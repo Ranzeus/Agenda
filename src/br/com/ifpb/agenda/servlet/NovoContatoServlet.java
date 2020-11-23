@@ -3,6 +3,7 @@ package br.com.ifpb.agenda.servlet;
 import java.io.IOException;
 //import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 //import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 public class NovoContatoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/CadContato.jsp");
+		rd.forward(request, response);
+	}
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-//		System.out.println("Cadastrando contato");
 		
 		String nomeContato = req.getParameter("nome");
 		String numContato = req.getParameter("num");
@@ -28,13 +36,7 @@ public class NovoContatoServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adicionar(contato);
 
-//		req.setAttribute("nome", contato.getNome());
-//		req.setAttribute("num", contato.getNum());
-		
-		resp.sendRedirect("ListaContatos");
-		
-//		RequestDispatcher rd = req.getRequestDispatcher("/ListaContatos");
-//		rd.forward(req, resp);
+		resp.sendRedirect("/_agenda/contatos");
 
 	}
 	

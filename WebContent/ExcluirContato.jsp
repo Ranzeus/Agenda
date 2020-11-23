@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/contato/excluir" var="servletExcluiContato"/>
+<c:url value="/contato/formExcluir/" var="servletExcluiContato"/>
 <c:url value="/" var="ServletMenu"/>
 
 
@@ -18,7 +18,7 @@
 		
 	<h2>Excluir Contato</h2>
 	
-	<form action="${servletExcluiContato}" method="get">
+	<form action="${servletExcluiContato}" method="post">
 	<b>Id do Contato </b>:<input type="number" name="id"/>
 	<input type="submit"/>
 	</form>

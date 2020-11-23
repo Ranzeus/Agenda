@@ -3,9 +3,9 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:url value="/novoContato" var="novoContatoServlet"/>
-<c:url value="/listaContatos" var="novoContatonovoContato"/>
-<c:url value="/excluirContato" var="excluirContatoServlet"/>
+<c:url value="/contato/criar" var="novoContatoServlet"/>
+<c:url value="/contatos" var="novoContatonovoContato"/>
+<c:url value="/contato/excluir" var="excluirContatoServlet"/>
 
 <html>
 <head>

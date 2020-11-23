@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:url value="/novoContato" var="novoContatoServlet"/>
+<c:url value="/listaContatos" var="novoContatonovoContato"/>
+<c:url value="/excluirContato" var="excluirContatoServlet"/>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -5,10 +14,10 @@
 </head>
 <body>
 <h1>Menu da Agenda de Contatos</h1>
-<a href="http://localhost:8080/Agenda/CadContato.jsp">Cadastrar Contato</a>
+<a href="${novoContatoServlet}">Cadastrar Contato</a>
 <br>
-<a href="http://localhost:8080/Agenda/ListaContatos">Listar Contatos</a>
+<a href="${listaContatosServlet}">Listar Contatos</a>
 <br>
-<a href="http://localhost:8080/Agenda/ExcluirContato.jsp">Excluir Contato</a>
+<a href="${excluirContatoServlet}">Excluir Contato</a>
 </body>
 </html>

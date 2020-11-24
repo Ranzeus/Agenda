@@ -6,7 +6,7 @@
 
 <c:url value="/" var="ServletMenu"/>
 <c:url value="/contato/excluir" var="servletExcluirContato"/>
-<c:url value="/contato/editar" var="servletEditarContato"/>
+<c:url value="/contato/alterar" var="servletEditarContato"/>
 
 <!DOCTYPE html>
 <html>

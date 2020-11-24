@@ -1,6 +1,8 @@
 package br.com.ifpb.agenda.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,17 @@ public class AlterarContatoServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	Integer id = Integer.parseInt(request.getParameter("id"));
+		RequestDispatcher rd = request.getRequestDispatcher("/EditarContato.jsp");
+		request.setAttribute("id", id);
+		rd.forward(request, response);
+		
+	}
+    
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Banco banco = new Banco();
 		
@@ -40,7 +52,7 @@ public class AlterarContatoServlet extends HttpServlet {
 		contato.setNome(nomeContato);
 		contato.setNum(numContato);
 		
-		response.sendRedirect("ListaContatos");
+		response.sendRedirect("/contatos");
 		
 	}
 

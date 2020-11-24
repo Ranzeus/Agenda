@@ -44,7 +44,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			res = false;
 		}
 		
-		response.sendRedirect("/_agenda/contatos");
+		response.sendRedirect("/contatos");
 
 	}
 

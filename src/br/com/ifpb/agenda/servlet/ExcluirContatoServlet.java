@@ -31,7 +31,7 @@ public class ExcluirContatoServlet extends HttpServlet {
 			res = false;
 		}
 		
-		response.sendRedirect("/_agenda/contatos");
+		response.sendRedirect("/contatos");
 
 	}
 

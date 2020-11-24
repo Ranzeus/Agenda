@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List, br.com.ifpb.agenda.servlet.Contato"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/alterarContato" var="ServletAlterarContato"/>
+<c:url value="/contato/alterar" var="ServletAlterarContato"/>
 <c:url value="/" var="ServletMenu"/>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
 		
 		<h2>Editar Contato</h2>
 		
-		<form action="${ServletAlterarContato}" method="post">
+		<form action="${ServletAlterarContato}?id=${id}" method="post">
 		
 			<b>Nome: </b><input type="text" name="nome" value="${contato.nome }"/>
 			<b>Numero: </b><input type="text" name="num" value="${contato.num}"/>

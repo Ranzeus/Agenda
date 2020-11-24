@@ -36,7 +36,7 @@ public class NovoContatoServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adicionar(contato);
 
-		resp.sendRedirect("/_agenda/contatos");
+		resp.sendRedirect("/contatos");
 
 	}
 	
